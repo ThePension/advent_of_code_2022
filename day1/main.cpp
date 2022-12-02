@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -48,8 +49,16 @@ int main ()
 
     if (calories[y] > max) max = calories[y];
   }
-  
-  cout << "Max calories: " << max << endl;
+
+  cout << "Part1 - Max calories: " << max << endl;
+
+  sort(calories, calories + inputs.size(), greater<int>());
+
+  int n = 3;
+  int tot = 0;
+  for(int i = 0; i < n; i++) tot += calories[i];
+
+  cout << "Part2 - Total : " << tot << endl;
 
   return 0;
 }
